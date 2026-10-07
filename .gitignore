@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.*
+.n8n/
+*.log
+test-results/
+private-verification/

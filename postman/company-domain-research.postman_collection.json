@@ -1,0 +1,95 @@
+{
+  "info": {
+    "name": "Company domains to LinkedIn company research",
+    "description": "Use your own Apify account. Start once, poll status manually every 15 seconds until SUCCEEDED, then retrieve results. A collection runner does not automatically wait for completion. Maximum actor charge $0.10, memory 512 MB, actor timeout 120 seconds. The first request can incur charges. Set APIFY_TOKEN privately; no token is exported.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{APIFY_TOKEN}}", "type": "string" }] },
+  "variable": [
+    { "key": "baseUrl", "value": "https://api.apify.com/v2", "type": "string" },
+    { "key": "runId", "value": "", "type": "string" },
+    { "key": "datasetId", "value": "", "type": "string" },
+    { "key": "runStatus", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "1. Start one capped actor run",
+      "event": [
+        { "listen": "prerequest", "script": { "type": "text/javascript", "exec": [
+          "pm.collectionVariables.unset('runId');",
+          "pm.collectionVariables.unset('datasetId');",
+          "pm.collectionVariables.unset('runStatus');",
+          "if (!pm.variables.get('APIFY_TOKEN')) { pm.execution.skipRequest(); throw new Error('Set APIFY_TOKEN locally before sending.'); }"
+        ] } },
+        { "listen": "test", "script": { "type": "text/javascript", "exec": [
+          "const data = pm.response.json().data;",
+          "pm.test('Run created', function () { pm.expect(pm.response.code).to.eql(201); pm.expect(data.id).to.be.a('string'); });",
+          "if (pm.response.code !== 201 || !data || !data.id) throw new Error('Actor start failed; inspect the response.');",
+          "pm.collectionVariables.set('runId', data.id);",
+          "pm.collectionVariables.set('runStatus', data.status);"
+        ] } }
+      ],
+      "request": {
+        "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/acts/george.the.developer~linkedin-company-by-domain/runs?maxTotalChargeUsd=0.10&timeout=120&memory=512",
+          "host": ["{{baseUrl}}"], "path": ["acts", "george.the.developer~linkedin-company-by-domain", "runs"],
+          "query": [{ "key": "maxTotalChargeUsd", "value": "0.10" }, { "key": "timeout", "value": "120" }, { "key": "memory", "value": "512" }]
+        },
+        "body": {
+          "mode": "raw", "raw": "{\n  \"domains\": [\"stripe.com\", \"vercel.com\", \"gitlab.com\"],\n  \"maxDomains\": 3,\n  \"mode\": \"resolve\",\n  \"includeUnresolved\": true,\n  \"concurrency\": 3\n}",
+          "options": { "raw": { "language": "json" } }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Poll run status until SUCCEEDED",
+      "event": [
+        { "listen": "prerequest", "script": { "type": "text/javascript", "exec": [
+          "if (!pm.collectionVariables.get('runId')) { pm.execution.skipRequest(); throw new Error('Start a run first.'); }"
+        ] } },
+        { "listen": "test", "script": { "type": "text/javascript", "exec": [
+          "pm.collectionVariables.unset('datasetId');",
+          "const data = pm.response.json().data;",
+          "pm.test('Run status retrieved', function () { pm.expect(pm.response.code).to.eql(200); pm.expect(data.status).to.be.a('string'); });",
+          "if (pm.response.code !== 200 || !data) throw new Error('Run status request failed.');",
+          "pm.collectionVariables.set('runStatus', data.status);",
+          "if (data.status === 'SUCCEEDED' && data.defaultDatasetId) pm.collectionVariables.set('datasetId', data.defaultDatasetId);",
+          "else if (['READY','RUNNING','ABORTING','TIMING-OUT'].includes(data.status)) console.log('Run in progress. Wait 15 seconds and send this status request again.');",
+          "else throw new Error('Actor did not deliver a successful dataset: ' + data.status);"
+        ] } }
+      ],
+      "request": {
+        "method": "GET", "header": [],
+        "url": { "raw": "{{baseUrl}}/actor-runs/{{runId}}", "host": ["{{baseUrl}}"], "path": ["actor-runs", "{{runId}}"] }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Retrieve company research rows",
+      "event": [
+        { "listen": "prerequest", "script": { "type": "text/javascript", "exec": [
+          "if (pm.collectionVariables.get('runStatus') !== 'SUCCEEDED' || !pm.collectionVariables.get('datasetId')) { pm.execution.skipRequest(); throw new Error('Poll until SUCCEEDED before retrieving company rows.'); }"
+        ] } },
+        { "listen": "test", "script": { "type": "text/javascript", "exec": [
+          "pm.test('Nonempty company dataset', function () {",
+          "  pm.expect(pm.response.code).to.eql(200);",
+          "  const rows = pm.response.json();",
+          "  pm.expect(rows).to.be.an('array').that.is.not.empty;",
+          "  rows.forEach(row => pm.expect(row.domain).to.be.a('string'));",
+          "});"
+        ] } }
+      ],
+      "request": {
+        "method": "GET", "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/datasets/{{datasetId}}/items?clean=true&format=json&limit=1000",
+          "host": ["{{baseUrl}}"], "path": ["datasets", "{{datasetId}}", "items"],
+          "query": [{ "key": "clean", "value": "true" }, { "key": "format", "value": "json" }, { "key": "limit", "value": "1000" }]
+        }
+      },
+      "response": []
+    }
+  ]
+}
