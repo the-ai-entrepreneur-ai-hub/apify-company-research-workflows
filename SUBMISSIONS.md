@@ -19,6 +19,7 @@ Last checked: October 7, 2026.
 | Channel | Status | Next gate |
 |---|---|---|
 | Public GitHub workflow pack | Published; anonymous downloads verified | Measure adoption and maintain assets |
+| Apify public starter task | Published; visible in the actor's Tasks tab without login | Customers copy and evaluate it; adoption unmeasured |
 | n8n Creator Hub | Creator account created; not submitted | Email verification, workflow engine check and portal review |
 | Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
@@ -36,6 +37,8 @@ Last checked: October 7, 2026.
 - No paying-user acquisition, channel attribution or revenue improvement has been measured.
 
 Publication review found that the original 120-second actor timeout was shorter than the resolver's documented 180-second shutdown reserve. Corrected exports use a 900-second actor timeout, 17-minute polling age limit and 20-minute workflow execution limit. A regression test reproduced the incompatibility before the correction. Existing users should reimport the corrected exports.
+
+The [public starter task](https://apify.com/george.the.developer/linkedin-company-by-domain/examples/company-domain-research-starter) uses three sample domains, 512 MB, a 900-second timeout and a $0.10 maximum actor charge. Its input passed Apify's live input-schema validation. Publication returned `isPublic:true`, and a signed-out browser displayed the task in the actor's Tasks tab. The task had zero runs at publication; saving and publishing it did not execute the actor. The task links back to this workflow pack. The task API itself still requires authentication.
 
 ## Published assets
 

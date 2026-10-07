@@ -6,6 +6,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 
 ## Download
 
+- [Apify starter task](https://apify.com/george.the.developer/linkedin-company-by-domain/examples/company-domain-research-starter) — a public three-domain configuration; copy and edit it before running.
 - [n8n workflow JSON](workflows/company-domain-research.n8n.json)
 - [Postman collection JSON](postman/company-domain-research.postman_collection.json)
 - [Clay setup guide](guides/clay.md)
