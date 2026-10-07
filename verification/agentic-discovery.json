@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-07T14:08:00.938174+00:00",
+  "owner": "george.the.developer",
+  "sourceUrls": {
+    "all": "https://api.apify.com/v2/store?username=george.the.developer&limit=1000",
+    "eligible": "https://api.apify.com/v2/store?username=george.the.developer&allowsAgenticUsers=true&limit=1000",
+    "excluded": "https://api.apify.com/v2/store?username=george.the.developer&allowsAgenticUsers=false&limit=1000",
+    "includingUnrunnable": "https://api.apify.com/v2/store?username=george.the.developer&includeUnrunnableActors=true&limit=1000"
+  },
+  "counts": {
+    "all": 83,
+    "eligible": 49,
+    "excluded": 34,
+    "includingUnrunnable": 83
+  },
+  "responseFlag": "isWhiteListedForAgenticPayments",
+  "scope": "Public metadata and discovery eligibility only. No actor execution or payment transaction. Eligibility does not establish useful output, customer adoption or revenue.",
+  "actors": [
+    {
+      "id": "JboiGyDhE1RdFUFlb",
+      "name": "ai-text-humanizer-api",
+      "url": "https://apify.com/george.the.developer/ai-text-humanizer-api",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "mcHbwILhv1k7ugtxg",
+      "name": "ai-training-data-scraper",
+      "url": "https://apify.com/george.the.developer/ai-training-data-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "MygWsoNWkoZ35cbmz",
+      "name": "amazon-review-intelligence",
+      "url": "https://apify.com/george.the.developer/amazon-review-intelligence",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "PUiCQJ4g5Vg4To9kC",
+      "name": "ats-hire-trigger-intent-scraper",
+      "url": "https://apify.com/george.the.developer/ats-hire-trigger-intent-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "50BSPqURt0UCO1giP",
+      "name": "bluesky-scraper",
+      "url": "https://apify.com/george.the.developer/bluesky-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "N4hAsabiND1JYaZH5",
+      "name": "calibrated-google-trends-api",
+      "url": "https://apify.com/george.the.developer/calibrated-google-trends-api",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "DD39NRcEM5Nlxrndc",
+      "name": "coinmarketcap-new-coins-scraper",
+      "url": "https://apify.com/george.the.developer/coinmarketcap-new-coins-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "yjpAcDRdrDhyscjXz",
+      "name": "company-enrichment-api",
+      "url": "https://apify.com/george.the.developer/company-enrichment-api",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "SPfU5xESWnrkxtvQc",
+      "name": "crypto-launch-tracker",
+      "url": "https://apify.com/george.the.developer/crypto-launch-tracker",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "uldqu7LS6co6ys0xk",
+      "name": "dental-practice-lead-finder",
+      "url": "https://apify.com/george.the.developer/dental-practice-lead-finder",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "tDd9qqUq0uC8TaUoT",
+      "name": "google-maps-lead-intel",
+      "url": "https://apify.com/george.the.developer/google-maps-lead-intel",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "a4tIx7rYdrZNmmpXM",
+      "name": "google-maps-leads-website-audit",
+      "url": "https://apify.com/george.the.developer/google-maps-leads-website-audit",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "yKXbJKcBDLDykbga7",
+      "name": "google-news-monitor",
+      "url": "https://apify.com/george.the.developer/google-news-monitor",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "ClMmb2j2D6BuTtgcN",
+      "name": "google-scholar-scraper",
+      "url": "https://apify.com/george.the.developer/google-scholar-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "y2dZvArZ9LRbHpEhi",
+      "name": "indeed-job-scraper",
+      "url": "https://apify.com/george.the.developer/indeed-job-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "ZxXFcuks26hmuevJs",
+      "name": "job-posts-to-buyer-emails",
+      "url": "https://apify.com/george.the.developer/job-posts-to-buyer-emails",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "DceJ4UooAAvhNi2MN",
+      "name": "js-content-crawler-lite-rag",
+      "url": "https://apify.com/george.the.developer/js-content-crawler-lite-rag",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "Y7buo4ul786ZtYdL2",
+      "name": "law-firm-lead-finder",
+      "url": "https://apify.com/george.the.developer/law-firm-lead-finder",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "1FPVackpj4GyFTG9E",
+      "name": "lead-enrichment-pipeline",
+      "url": "https://apify.com/george.the.developer/lead-enrichment-pipeline",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "0reNPvdycTAAOpOYQ",
+      "name": "linkedin-company-by-domain",
+      "url": "https://apify.com/george.the.developer/linkedin-company-by-domain",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "XeH8xWJJ4RnWgVOVU",
+      "name": "linkedin-company-employees-scraper",
+      "url": "https://apify.com/george.the.developer/linkedin-company-employees-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "w12URfb0Q3yrLndlG",
+      "name": "linkedin-competitor-intel",
+      "url": "https://apify.com/george.the.developer/linkedin-competitor-intel",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "V1jurT0cSLy9uw9hl",
+      "name": "linkedin-decision-makers-finder",
+      "url": "https://apify.com/george.the.developer/linkedin-decision-makers-finder",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "zb7LwJmthpmZCuIVe",
+      "name": "linkedin-post-engagers-scraper",
+      "url": "https://apify.com/george.the.developer/linkedin-post-engagers-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "HoU2JjPIDigrK8Wge",
+      "name": "medspa-lead-discovery-ppe",
+      "url": "https://apify.com/george.the.developer/medspa-lead-discovery-ppe",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "AtzbbcWvZIwH8l8hz",
+      "name": "npi-provider-lookup",
+      "url": "https://apify.com/george.the.developer/npi-provider-lookup",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "dg61Io6fCQDSyGbj7",
+      "name": "ofac-sanctions-screener",
+      "url": "https://apify.com/george.the.developer/ofac-sanctions-screener",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "Yre3cI5F3jv62PqFM",
+      "name": "podcast-transcript-scraper",
+      "url": "https://apify.com/george.the.developer/podcast-transcript-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "gslPQJJOMIBBXctDx",
+      "name": "reddit-scraper-pro",
+      "url": "https://apify.com/george.the.developer/reddit-scraper-pro",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "mJZV4npGgcFom9UJY",
+      "name": "remote-jobs-scraper",
+      "url": "https://apify.com/george.the.developer/remote-jobs-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "1dXgeEiI8EAzmQMYW",
+      "name": "restaurant-lead-finder",
+      "url": "https://apify.com/george.the.developer/restaurant-lead-finder",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "chZc6YmwpuR2bGGx6",
+      "name": "saas-buyer-extractor",
+      "url": "https://apify.com/george.the.developer/saas-buyer-extractor",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "cMdA8vdH9z3hS0wEv",
+      "name": "sec-edgar-filing-extractor",
+      "url": "https://apify.com/george.the.developer/sec-edgar-filing-extractor",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "ocfwsdPdIMeeobFLO",
+      "name": "seek-jobs-scraper",
+      "url": "https://apify.com/george.the.developer/seek-jobs-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "Y7nTSQweEvaPmPujs",
+      "name": "shipping-disruption-tracker",
+      "url": "https://apify.com/george.the.developer/shipping-disruption-tracker",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "zi7M97FNhyGzTm7Y3",
+      "name": "shopify-agentic-commerce-product-feed",
+      "url": "https://apify.com/george.the.developer/shopify-agentic-commerce-product-feed",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "uHMZYwJ9nzDcNXbPn",
+      "name": "shopify-discount-scanner",
+      "url": "https://apify.com/george.the.developer/shopify-discount-scanner",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "JffmaZP2OzQwZYJ6v",
+      "name": "substack-scraper",
+      "url": "https://apify.com/george.the.developer/substack-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "3zeli0207d7KpNzKR",
+      "name": "telegram-channel-scraper",
+      "url": "https://apify.com/george.the.developer/telegram-channel-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "O0m1ucxyjTGPhfZx0",
+      "name": "telegram-keyword-search",
+      "url": "https://apify.com/george.the.developer/telegram-keyword-search",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "eGTJ4xiuraJuXnlVw",
+      "name": "threads-scraper",
+      "url": "https://apify.com/george.the.developer/threads-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "TPb5KOfup1gp1aM3H",
+      "name": "tiktok-shop-affiliate-sales-scraper",
+      "url": "https://apify.com/george.the.developer/tiktok-shop-affiliate-sales-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "ebdx3JRbn7ZsO8Z8x",
+      "name": "tiktok-to-shopify-trending-products",
+      "url": "https://apify.com/george.the.developer/tiktok-to-shopify-trending-products",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "NIgBuAMWQ7tmmm4cN",
+      "name": "unblockable-ico-drops-scraper",
+      "url": "https://apify.com/george.the.developer/unblockable-ico-drops-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "sY8T3CmzAM98CcuKl",
+      "name": "unblockable-ico-drops-scraper-clone",
+      "url": "https://apify.com/george.the.developer/unblockable-ico-drops-scraper-clone",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "NMCFDW7ph9fqZPaMQ",
+      "name": "us-tariff-lookup",
+      "url": "https://apify.com/george.the.developer/us-tariff-lookup",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "S1yieDfyeBftIwD8g",
+      "name": "websight-api",
+      "url": "https://apify.com/george.the.developer/websight-api",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "2nENxStgeINajiz5k",
+      "name": "wellfound-jobs-scraper",
+      "url": "https://apify.com/george.the.developer/wellfound-jobs-scraper",
+      "isWhiteListedForAgenticPayments": true
+    },
+    {
+      "id": "jTeLbWgPzyrAlUqWC",
+      "name": "youtube-transcript-scraper",
+      "url": "https://apify.com/george.the.developer/youtube-transcript-scraper",
+      "isWhiteListedForAgenticPayments": true
+    }
+  ],
+  "eligibleFetchedAt": "2026-10-07T14:01:04.896120+00:00"
+}

@@ -10,6 +10,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 - [n8n workflow JSON](workflows/company-domain-research.n8n.json)
 - [Postman collection JSON](postman/company-domain-research.postman_collection.json)
 - [Remote MCP client setup](guides/mcp.md) with a capped actor-call example
+- [AI agent discovery guide](guides/agentic-discovery.md) and [dated eligible catalog](verification/agentic-discovery.json)
 - [Clay setup guide](guides/clay.md)
 - [Make setup guide](guides/make.md)
 

@@ -26,6 +26,7 @@ Last checked: October 7, 2026.
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
 | Apify hosted MCP connection | Initialization and tool discovery verified; connection guide and capped call example included | Client OAuth/UI setup and live actor execution remain unverified |
 | MCP directories | Not submitted | An owned, tested MCP server registration or supported connection listing |
+| Apify agentic discovery | Existing automatic discovery verified: 49 of 83 public listings matched the eligible filter on October 7 | [Guide](guides/agentic-discovery.md) and [snapshot](verification/agentic-discovery.json); payment, actor execution and commercial adoption unverified |
 
 ## Verification scope
 
