@@ -1,6 +1,6 @@
 # Company domain research workflows for Apify
 
-Turn a list of company website domains into LinkedIn company research records. Includes an n8n workflow, a Postman collection, and setup guides for Clay and Make.
+Turn a list of company website domains into LinkedIn company research records. Includes an n8n workflow, a Postman collection, MCP connection examples, and setup guides for Clay and Make.
 
 Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedin-company-by-domain). Connect your own Apify account; actor usage is billed there. The workflow files are free under the MIT license.
 
@@ -9,6 +9,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 - [Apify starter task](https://apify.com/george.the.developer/linkedin-company-by-domain/examples/company-domain-research-starter) — a public three-domain configuration; copy and edit it before running.
 - [n8n workflow JSON](workflows/company-domain-research.n8n.json)
 - [Postman collection JSON](postman/company-domain-research.postman_collection.json)
+- [Remote MCP client setup](guides/mcp.md) with a capped actor-call example
 - [Clay setup guide](guides/clay.md)
 - [Make setup guide](guides/make.md)
 

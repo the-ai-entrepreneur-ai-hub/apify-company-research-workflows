@@ -1,9 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
-const read = name => JSON.parse(readFileSync(new URL(`../${name}`, import.meta.url), 'utf8'));
+const read = name => {
+  const file = new URL(`../${name}`, import.meta.url);
+  assert.ok(existsSync(file), `Missing published artifact: ${name}`);
+  return JSON.parse(readFileSync(file, 'utf8'));
+};
 const workflow = () => read('workflows/company-domain-research.n8n.json');
 const node = name => workflow().nodes.find(n => n.name === name);
 const now = Date.parse('2026-10-07T12:00:00Z');
@@ -130,5 +134,28 @@ test('distribution JSON exports contain no real token or token query parameter',
   for (const path of ['workflows/company-domain-research.n8n.json', 'postman/company-domain-research.postman_collection.json']) {
     const text = JSON.stringify(read(path));
     assert.doesNotMatch(text, /apify_api_[A-Za-z0-9]+|gh[pous]_[A-Za-z0-9]+|[?&]token=/);
+  }
+});
+
+test('MCP client config uses the hosted OAuth connection without embedded credentials', () => {
+  const config = read('mcp/cursor-company-research.json');
+  const server = config.mcpServers['apify-company-research'];
+  const endpoint = new URL(server.url);
+  assert.equal(endpoint.origin, 'https://mcp.apify.com');
+  assert.equal(endpoint.searchParams.get('tools'), 'call-actor,get-actor-run,get-dataset-items');
+  assert.deepEqual(Object.keys(server), ['url']);
+});
+
+test('MCP example keeps actor execution limits in callOptions', () => {
+  const request = read('mcp/company-domain-run.json');
+  assert.equal(request.actor, 'george.the.developer/linkedin-company-by-domain');
+  assert.equal(request.waitSecs, 0);
+  assert.equal(request.input.domains.length, 3);
+  assert.equal(request.input.maxDomains, 3);
+  assert.equal(request.input.includeUnresolved, true);
+  assert.deepEqual(request.callOptions, { maxTotalChargeUsd: 0.1, memory: 512, timeout: 900 });
+  for (const key of Object.keys(request.callOptions)) assert.equal(request.input[key], undefined);
+  for (const file of ['mcp/cursor-company-research.json', 'mcp/company-domain-run.json']) {
+    assert.doesNotMatch(JSON.stringify(read(file)), /apify_api_[A-Za-z0-9]+|[?&]token=|Bearer /);
   }
 });

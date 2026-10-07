@@ -24,14 +24,15 @@ Last checked: October 7, 2026.
 | Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
+| Apify hosted MCP connection | Initialization and tool discovery verified; connection guide and capped call example included | Client OAuth/UI setup and live actor execution remain unverified |
 | MCP directories | Not submitted | An owned, tested MCP server registration or supported connection listing |
 
 ## Verification scope
 
-- Eleven local workflow/collection contract tests cover synthetic fixtures and the documented actor shutdown reserve.
+- Thirteen local workflow/collection/MCP contract tests cover synthetic fixtures, the documented actor shutdown reserve and credential-free MCP examples.
 - Input/output field names were compared with the actor's local schema and existing dataset rows.
 - No new paid actor run was started.
-- Independent review identified and corrected an unavailable sandbox global; all eleven tests pass without injecting that global.
+- Independent review identified and corrected an unavailable sandbox global; workflow tests do not inject that global.
 - A full n8n engine verification is being attempted separately; until recorded below, local tests do not prove successful import and execution in n8n.
 - Postman collection passes the official v2.1 collection schema validation.
 - No paying-user acquisition, channel attribution or revenue improvement has been measured.

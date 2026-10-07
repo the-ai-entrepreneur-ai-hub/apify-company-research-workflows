@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "apify-company-research": {
+      "url": "https://mcp.apify.com?tools=call-actor,get-actor-run,get-dataset-items"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "actor": "george.the.developer/linkedin-company-by-domain",
+  "input": {
+    "domains": ["stripe.com", "vercel.com", "gitlab.com"],
+    "maxDomains": 3,
+    "mode": "resolve",
+    "includeUnresolved": true,
+    "concurrency": 3
+  },
+  "waitSecs": 0,
+  "callOptions": {
+    "maxTotalChargeUsd": 0.1,
+    "memory": 512,
+    "timeout": 900
+  }
+}
