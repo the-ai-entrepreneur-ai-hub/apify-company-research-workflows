@@ -1,5 +1,5 @@
 {
-  "name": "Company domain to LinkedIn research records",
+  "name": "Resolve company domains to LinkedIn company records with Apify",
   "active": false,
   "settings": { "executionOrder": "v1", "executionTimeout": 1200 },
   "pinData": {},
@@ -68,10 +68,10 @@
       }
     },
     {
-      "id": "setup", "name": "Setup and pricing", "type": "n8n-nodes-base.stickyNote", "typeVersion": 1, "position": [100, -390],
+      "id": "setup", "name": "Setup and pricing", "type": "n8n-nodes-base.stickyNote", "typeVersion": 1, "position": [-950, -390],
       "parameters": {
-        "content": "## Company domain research\nSelect the same Header Auth credential on all three HTTP Request nodes: Authorization / Bearer YOUR_APIFY_TOKEN.\nEdit the domain list in Prepare domains. Starter: 1-10 domains.\n$0.10 max actor charge; 900-second actor timeout. Check current actor pricing.\nExport the final node as CSV or connect your spreadsheet destination. Review rows marked needsReview.\nSee the repository README for setup and verification limits.",
-        "height": 300, "width": 560
+        "content": "## Quick overview\nThis workflow takes a list of company website domains, runs the Apify “LinkedIn Company by Domain” actor to resolve each domain to a LinkedIn company page, and returns the resulting dataset with a needsReview flag for low-confidence or invalid matches.\n\n## How it works\n1. Starts when you run the workflow manually.\n2. Validates and normalizes 1–10 input domains (or uses sample domains) and builds the Apify actor input, including concurrency and whether to keep unresolved results.\n3. Starts the Apify actor run via the Apify API with a charge cap and run timeout.\n4. Polls the existing Apify run every 15 seconds, stopping on a failed terminal status or after a 17-minute polling age limit. The overall workflow execution limit is 20 minutes.\n5. Fetches the completed results from the Apify dataset associated with the successful run.\n6. Validates each returned row and adds a needsReview flag when confidence is not high/medium or the LinkedIn company URL is missing/invalid.\n\n## Setup\n1. Create an Apify account and generate an Apify API token.\n2. In n8n, add an HTTP Header Auth credential with header name Authorization and value Bearer YOUR_APIFY_TOKEN, and select it on the Apify HTTP requests.\n3. Provide 1–10 domains as input to the workflow or edit the sample list in the domain preparation step before executing manually.\n4. Start with the three-domain sample and inspect the results before scaling. The starter uses a $0.10 maximum actor charge and a 900-second actor timeout. Review current actor pricing and the linked setup guide before changing limits; preserve working time beyond the actor shutdown reserve.\n\n## Requirements\nAn n8n instance, your own Apify account and private Header Auth credential. Actor execution can incur charges on your Apify account; spreadsheet destinations require their own credentials.\n\n## Customization\nExport final records as CSV or connect a Google Sheets node using your own spreadsheet credentials. Review domain coverage and needsReview flags before using the results.\n\n## Additional information\nThe charge cap can produce partial results. This workflow returns company research, not individual employee profiles or emails. The review flag checks returned fields and does not independently verify identity. Setup and verification scope: https://the-ai-entrepreneur-ai-hub.github.io/apify-company-research-workflows/ . Maintained by the developer of the linked actor. Contract tests and three n8n 2.42.4 CLI scenarios passed with a local mock API; live actor resolution was not tested in those checks.",
+        "height": 1550, "width": 750
       }
     }
   ],

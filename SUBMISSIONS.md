@@ -20,7 +20,7 @@ Last checked: October 7, 2026.
 |---|---|---|
 | Public GitHub workflow pack | Published; anonymous downloads verified | Measure adoption and maintain assets |
 | Apify public starter task | Published; visible in the actor's Tasks tab without login | Customers copy and evaluate it; adoption unmeasured |
-| n8n Creator Hub | Creator account created; local-mock engine checks passed; not submitted | Email verification and portal review |
+| n8n Creator Hub | Template 20634 submitted for human review on October 7; local-mock engine checks passed | Publisher review and public gallery acceptance |
 | Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
@@ -47,7 +47,9 @@ The [public starter task](https://apify.com/george.the.developer/linkedin-compan
 
 Anonymous requests retrieved the workflow JSON, Postman collection and README and matched them against the local files. The initial [automated validation run](https://github.com/the-ai-entrepreneur-ai-hub/apify-company-research-workflows/actions/runs/37615595771) completed successfully.
 
-Creator account creation returned a successful response and the n8n portal displayed its email-verification instruction. This is not template submission or acceptance. Available mailbox connections did not provide the registration inbox.
+Creator registration initially displayed an email-verification instruction. A later authenticated login reached the dashboard and upload form, so that message did not block submission. Template `20634`, **Resolve company domains to LinkedIn company records with Apify**, was uploaded once for automatic review, finalized and submitted for human review at `2026-10-07T13:14:10.217Z`. The portal confirmed submission and stated a typical review time of 3-5 business days. Public gallery approval and publication remain pending. Executable nodes, connections and limits are unchanged from the CLI-verified workflow.
+
+Post-submission review found that the portal's finalized listing description was longer than the uploaded overview note. The repository's workflow and [description](guides/n8n-template.md) now include every finalized description section. The native submission still holds the earlier, shorter overview note: n8n rejected an edit with HTTP 400 because the template is under review. Apply the prepared note correction when the publisher permits edits; no duplicate submission was created. The change affects instructions and layout only. Full compliance with the description-in-sticky guideline remains pending for the native submission.
 
 ## Publishing routes
 
