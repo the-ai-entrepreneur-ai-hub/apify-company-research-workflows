@@ -18,9 +18,9 @@ Last checked: October 7, 2026.
 
 | Channel | Status | Next gate |
 |---|---|---|
-| Public GitHub workflow pack | Prepared locally | Fresh review, commit, publication and anonymous download verification |
-| n8n Creator Hub | Not submitted | Authenticated creator account, workflow verification and portal review |
-| Postman Public API Network | Not published | Authenticated public workspace or Postman API key |
+| Public GitHub workflow pack | Published; anonymous downloads verified | Measure adoption and maintain assets |
+| n8n Creator Hub | Creator account created; not submitted | Email verification, workflow engine check and portal review |
+| Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
 | MCP directories | Not submitted | An owned, tested MCP server registration or supported connection listing |
@@ -30,9 +30,18 @@ Last checked: October 7, 2026.
 - Ten local workflow/collection contract tests pass against synthetic fixtures.
 - Input/output field names were compared with the actor's local schema and existing dataset rows.
 - No new paid actor run was started.
+- Independent review identified and corrected an unavailable sandbox global; all ten tests pass without injecting that global.
 - A full n8n engine verification is being attempted separately; until recorded below, local tests do not prove successful import and execution in n8n.
-- Postman collection schema validation is a separate gate before publication.
+- Postman collection passes the official v2.1 collection schema validation.
 - No paying-user acquisition, channel attribution or revenue improvement has been measured.
+
+## Published assets
+
+[Public repository](https://github.com/the-ai-entrepreneur-ai-hub/apify-company-research-workflows). Initial publication commit: `ad4d2e1`.
+
+Anonymous requests retrieved the workflow JSON, Postman collection and README and matched them against the local files. The initial [automated validation run](https://github.com/the-ai-entrepreneur-ai-hub/apify-company-research-workflows/actions/runs/37615595771) completed successfully.
+
+Creator account creation returned a successful response and the n8n portal displayed its email-verification instruction. This is not template submission or acceptance. Available mailbox connections did not provide the registration inbox.
 
 ## Publishing routes
 
