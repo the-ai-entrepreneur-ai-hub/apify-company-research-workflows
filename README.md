@@ -64,7 +64,7 @@ Run with Node.js 22 or newer:
 npm test
 ```
 
-Existing actor dataset fields were inspected read-only. A successful old run does not establish current end-to-end behavior. n8n engine integration and paid actor execution are separate verification gates; see [submission and verification status](SUBMISSIONS.md) for the recorded scope. Clay and Make documents are setup guides, not exported native templates.
+The workflow passed three CLI execution scenarios in n8n 2.42.4 using a local mock API and synthetic credentials: success, failed actor run and empty dataset. See the [engine report](verification/n8n-engine.json) and [verification scope](SUBMISSIONS.md). No paid actor execution was performed. Existing actor dataset fields were inspected read-only; current live resolution remains unverified. Clay and Make documents are setup guides, not exported native templates.
 
 ## Useful references
 

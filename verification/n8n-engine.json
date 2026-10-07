@@ -1,0 +1,67 @@
+{
+  "verifiedAt": "2026-10-07T12:33:14.358Z",
+  "engineVersion": "2.42.4",
+  "cases": [
+    {
+      "scenario": "success",
+      "passed": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v2/acts/george.the.developer~linkedin-company-by-domain/runs"
+        },
+        {
+          "method": "GET",
+          "path": "/v2/actor-runs/fixture-run"
+        },
+        {
+          "method": "GET",
+          "path": "/v2/actor-runs/fixture-run"
+        },
+        {
+          "method": "GET",
+          "path": "/v2/datasets/fixture-dataset/items"
+        }
+      ],
+      "polls": 2,
+      "lastNode": "Review company rows",
+      "error": null
+    },
+    {
+      "scenario": "failed-run",
+      "passed": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v2/acts/george.the.developer~linkedin-company-by-domain/runs"
+        },
+        {
+          "method": "GET",
+          "path": "/v2/actor-runs/fixture-run"
+        }
+      ],
+      "polls": 1,
+      "lastNode": "Route run",
+      "error": "Actor failed or returned an unsupported status: FAILED [line 7]"
+    },
+    {
+      "scenario": "empty-dataset",
+      "passed": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v2/acts/george.the.developer~linkedin-company-by-domain/runs"
+        },
+        {
+          "method": "GET",
+          "path": "/v2/datasets/fixture-dataset/items"
+        }
+      ],
+      "polls": 0,
+      "lastNode": "Review company rows",
+      "error": "Empty or malformed company dataset. [line 3]"
+    }
+  ],
+  "paidActorRuns": 0,
+  "transport": "local mock API with synthetic Header Auth; workflow code, graph and 15-second waits unchanged"
+}

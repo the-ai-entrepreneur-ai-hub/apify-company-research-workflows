@@ -20,7 +20,7 @@ Last checked: October 7, 2026.
 |---|---|---|
 | Public GitHub workflow pack | Published; anonymous downloads verified | Measure adoption and maintain assets |
 | Apify public starter task | Published; visible in the actor's Tasks tab without login | Customers copy and evaluate it; adoption unmeasured |
-| n8n Creator Hub | Creator account created; not submitted | Email verification, workflow engine check and portal review |
+| n8n Creator Hub | Creator account created; local-mock engine checks passed; not submitted | Email verification and portal review |
 | Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
@@ -33,7 +33,7 @@ Last checked: October 7, 2026.
 - Input/output field names were compared with the actor's local schema and existing dataset rows.
 - No new paid actor run was started.
 - Independent review identified and corrected an unavailable sandbox global; workflow tests do not inject that global.
-- A full n8n engine verification is being attempted separately; until recorded below, local tests do not prove successful import and execution in n8n.
+- n8n 2.42.4 CLI imported and executed the workflow against a local mock API on October 7, 2026. All three scenarios passed: successful polling and row review, terminal actor failure without dataset retrieval, and empty-dataset rejection. See the [engine verification report](verification/n8n-engine.json). Synthetic credentials and localhost HTTP responses replaced the live API; workflow code, graph and 15-second waits were unchanged. Browser UI import, cloud-hosted behavior and live actor output were not tested by this check.
 - Postman collection passes the official v2.1 collection schema validation.
 - No paying-user acquisition, channel attribution or revenue improvement has been measured.
 
