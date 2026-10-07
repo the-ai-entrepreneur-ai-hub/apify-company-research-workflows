@@ -46,10 +46,25 @@ test('terminal and unknown statuses fail visibly', () => {
   }
 });
 
-test('malformed run responses and polling beyond five minutes stop', () => {
-  for (const payload of [{}, { data: {} }, run('RUNNING', { id: null }), run('RUNNING', { startedAt: 'bad' }), run('RUNNING', { startedAt: '2026-10-07T11:54:59Z' }), run('SUCCEEDED', { defaultDatasetId: null })]) {
+test('malformed run responses and polling beyond seventeen minutes stop', () => {
+  for (const payload of [{}, { data: {} }, run('RUNNING', { id: null }), run('RUNNING', { startedAt: 'bad' }), run('RUNNING', { startedAt: '2026-10-07T11:42:59Z' }), run('SUCCEEDED', { defaultDatasetId: null })]) {
     assert.throws(() => execute('Route run', [payload]));
   }
+});
+
+test('starter time limits allow resolution after the actor shutdown reserve', () => {
+  // The actor reserves its final 180 seconds before starting any domain work.
+  const reserveSeconds = 180;
+  const startQuery = Object.fromEntries(node('Start actor').parameters.queryParameters.parameters.map(p => [p.name, p.value]));
+  const collection = read('postman/company-domain-research.postman_collection.json');
+  const postmanQuery = Object.fromEntries(collection.item[0].request.url.query.map(p => [p.key, p.value]));
+  for (const query of [startQuery, postmanQuery]) {
+    assert.ok(Number(query.timeout) >= reserveSeconds + Math.ceil(10 / 3) * 120, 'Allow the shutdown reserve and watchdog budget for the largest starter batch.');
+  }
+  assert.equal(Number(startQuery.timeout), Number(postmanQuery.timeout));
+  const startedAt = new Date(now - Number(startQuery.timeout) * 1000).toISOString();
+  assert.equal(execute('Route run', [run('RUNNING', { startedAt })])[0].json.routeIndex, 1, 'Polling must outlast the actor timeout.');
+  assert.ok(workflow().settings.executionTimeout > Number(startQuery.timeout) + 120);
 });
 
 test('unresolved results are retained and marked for review', () => {
@@ -90,7 +105,7 @@ test('workflow graph authenticates all HTTP calls and bounds spending without PO
   const q = Object.fromEntries(start.parameters.queryParameters.parameters.map(p => [p.name, p.value]));
   assert.equal(start.parameters.method, 'POST');
   assert.equal(Number(q.maxTotalChargeUsd), 0.1);
-  assert.equal(Number(q.timeout), 120);
+  assert.equal(Number(q.timeout), 900);
   assert.equal(Number(q.memory), 512);
   assert.equal(start.retryOnFail ?? false, false);
   assert.equal(node('Wait before polling').parameters.amount, 15);

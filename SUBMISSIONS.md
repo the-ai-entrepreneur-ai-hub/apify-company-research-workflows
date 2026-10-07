@@ -27,13 +27,15 @@ Last checked: October 7, 2026.
 
 ## Verification scope
 
-- Ten local workflow/collection contract tests pass against synthetic fixtures.
+- Eleven local workflow/collection contract tests cover synthetic fixtures and the documented actor shutdown reserve.
 - Input/output field names were compared with the actor's local schema and existing dataset rows.
 - No new paid actor run was started.
-- Independent review identified and corrected an unavailable sandbox global; all ten tests pass without injecting that global.
+- Independent review identified and corrected an unavailable sandbox global; all eleven tests pass without injecting that global.
 - A full n8n engine verification is being attempted separately; until recorded below, local tests do not prove successful import and execution in n8n.
 - Postman collection passes the official v2.1 collection schema validation.
 - No paying-user acquisition, channel attribution or revenue improvement has been measured.
+
+Publication review found that the original 120-second actor timeout was shorter than the resolver's documented 180-second shutdown reserve. Corrected exports use a 900-second actor timeout, 17-minute polling age limit and 20-minute workflow execution limit. A regression test reproduced the incompatibility before the correction. Existing users should reimport the corrected exports.
 
 ## Published assets
 

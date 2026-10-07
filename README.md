@@ -14,12 +14,14 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 ## What the n8n workflow does
 
 1. Accepts between 1 and 10 website domains; the sample uses Stripe, Vercel and GitLab.
-2. Starts one actor run with a $0.10 maximum actor charge, 512 MB memory and a 120-second actor timeout.
-3. Checks the run every 15 seconds, stopping on failure or after the polling age limit.
+2. Starts one actor run with a $0.10 maximum actor charge, 512 MB memory and a 900-second actor timeout.
+3. Checks the run every 15 seconds, stopping on failure or after a 17-minute polling age limit. The workflow execution limit is 20 minutes.
 4. Retrieves the completed dataset and retains unresolved rows for review.
 5. Marks records `needsReview` when confidence is low or a plausible LinkedIn company URL is missing.
 
 The added review flag checks the returned fields; it does not independently verify company identity. Partial results can occur if the actor reaches its charge limit. Review domain coverage before using the data.
+
+The actor reserves its final three minutes before starting new domains. The 15-minute actor timeout gives it working time before that reserve. Earlier exports used 120 seconds, which falls entirely inside the reserve and can produce only unresolved `time-budget` rows; replace those exports with this corrected version.
 
 ## Import into n8n
 

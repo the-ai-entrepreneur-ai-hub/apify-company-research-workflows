@@ -1,7 +1,7 @@
 {
   "name": "Company domain to LinkedIn research records",
   "active": false,
-  "settings": { "executionOrder": "v1", "executionTimeout": 420 },
+  "settings": { "executionOrder": "v1", "executionTimeout": 1200 },
   "pinData": {},
   "tags": [],
   "nodes": [
@@ -21,7 +21,7 @@
         "sendQuery": true,
         "queryParameters": { "parameters": [
           { "name": "maxTotalChargeUsd", "value": "0.10" },
-          { "name": "timeout", "value": "120" },
+          { "name": "timeout", "value": "900" },
           { "name": "memory", "value": "512" },
           { "name": "waitForFinish", "value": "0" }
         ] },
@@ -33,7 +33,7 @@
       "id": "route", "name": "Route run", "type": "n8n-nodes-base.code", "typeVersion": 2, "position": [660, 0],
       "parameters": {
         "mode": "runOnceForAllItems",
-        "jsCode": "const data = $input.first().json.data;\nif (!data || typeof data.id !== 'string' || !data.id) throw new Error('Malformed actor run response.');\nif (data.status === 'SUCCEEDED') {\n  if (typeof data.defaultDatasetId !== 'string' || !data.defaultDatasetId) throw new Error('Successful run has no dataset ID.');\n  return [{ json: { ...data, routeIndex: 0 } }];\n}\nif (!['READY', 'RUNNING', 'ABORTING', 'TIMING-OUT'].includes(data.status)) throw new Error('Actor failed or returned an unsupported status: ' + data.status);\nconst started = Date.parse(data.startedAt || data.createdAt);\nif (!Number.isFinite(started) || started > Date.now() + 60000) throw new Error('Run response has an invalid timestamp.');\nif (Date.now() - started > 300000) throw new Error('Polling exceeded five minutes; inspect the run in Apify Console.');\nreturn [{ json: { ...data, routeIndex: 1 } }];"
+        "jsCode": "const data = $input.first().json.data;\nif (!data || typeof data.id !== 'string' || !data.id) throw new Error('Malformed actor run response.');\nif (data.status === 'SUCCEEDED') {\n  if (typeof data.defaultDatasetId !== 'string' || !data.defaultDatasetId) throw new Error('Successful run has no dataset ID.');\n  return [{ json: { ...data, routeIndex: 0 } }];\n}\nif (!['READY', 'RUNNING', 'ABORTING', 'TIMING-OUT'].includes(data.status)) throw new Error('Actor failed or returned an unsupported status: ' + data.status);\nconst started = Date.parse(data.startedAt || data.createdAt);\nif (!Number.isFinite(started) || started > Date.now() + 60000) throw new Error('Run response has an invalid timestamp.');\nif (Date.now() - started > 1020000) throw new Error('Polling exceeded seventeen minutes; inspect the run in Apify Console.');\nreturn [{ json: { ...data, routeIndex: 1 } }];"
       }
     },
     {
@@ -70,7 +70,7 @@
     {
       "id": "setup", "name": "Setup and pricing", "type": "n8n-nodes-base.stickyNote", "typeVersion": 1, "position": [100, -390],
       "parameters": {
-        "content": "## Company domain research\nSelect the same Header Auth credential on all three HTTP Request nodes: Authorization / Bearer YOUR_APIFY_TOKEN.\nEdit the domain list in Prepare domains. Starter: 1-10 domains.\n$0.10 max actor charge; 120-second actor timeout. Check current actor pricing.\nExport the final node as CSV or connect your spreadsheet destination. Review rows marked needsReview.\nSee the repository README for setup and verification limits.",
+        "content": "## Company domain research\nSelect the same Header Auth credential on all three HTTP Request nodes: Authorization / Bearer YOUR_APIFY_TOKEN.\nEdit the domain list in Prepare domains. Starter: 1-10 domains.\n$0.10 max actor charge; 900-second actor timeout. Check current actor pricing.\nExport the final node as CSV or connect your spreadsheet destination. Review rows marked needsReview.\nSee the repository README for setup and verification limits.",
         "height": 300, "width": 560
       }
     }

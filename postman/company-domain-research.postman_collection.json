@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "Company domains to LinkedIn company research",
-    "description": "Use your own Apify account. Start once, poll status manually every 15 seconds until SUCCEEDED, then retrieve results. A collection runner does not automatically wait for completion. Maximum actor charge $0.10, memory 512 MB, actor timeout 120 seconds. The first request can incur charges. Set APIFY_TOKEN privately; no token is exported.",
+    "description": "Use your own Apify account. Start once, poll status manually every 15 seconds until SUCCEEDED, then retrieve results. A collection runner does not automatically wait for completion. Maximum actor charge $0.10, memory 512 MB, actor timeout 900 seconds. The first request can incur charges. Set APIFY_TOKEN privately; no token is exported.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{APIFY_TOKEN}}", "type": "string" }] },
@@ -32,9 +32,9 @@
       "request": {
         "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
         "url": {
-          "raw": "{{baseUrl}}/acts/george.the.developer~linkedin-company-by-domain/runs?maxTotalChargeUsd=0.10&timeout=120&memory=512",
+          "raw": "{{baseUrl}}/acts/george.the.developer~linkedin-company-by-domain/runs?maxTotalChargeUsd=0.10&timeout=900&memory=512",
           "host": ["{{baseUrl}}"], "path": ["acts", "george.the.developer~linkedin-company-by-domain", "runs"],
-          "query": [{ "key": "maxTotalChargeUsd", "value": "0.10" }, { "key": "timeout", "value": "120" }, { "key": "memory", "value": "512" }]
+          "query": [{ "key": "maxTotalChargeUsd", "value": "0.10" }, { "key": "timeout", "value": "900" }, { "key": "memory", "value": "512" }]
         },
         "body": {
           "mode": "raw", "raw": "{\n  \"domains\": [\"stripe.com\", \"vercel.com\", \"gitlab.com\"],\n  \"maxDomains\": 3,\n  \"mode\": \"resolve\",\n  \"includeUnresolved\": true,\n  \"concurrency\": 3\n}",
