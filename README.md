@@ -13,6 +13,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 - [AI agent discovery guide](guides/agentic-discovery.md) and [dated eligible catalog](verification/agentic-discovery.json)
 - [Clay setup guide](guides/clay.md)
 - [Make setup guide](guides/make.md)
+- [Gumloop agent and Task Runner setup guide](guides/gumloop.md) — documented connection paths; native execution remains unverified.
 
 ## What the n8n workflow does
 

@@ -1,6 +1,6 @@
 # Submission and verification status
 
-Last checked: October 7, 2026.
+Gumloop setup documentation checked October 8, 2026. Other channel records retain their October 7 checkpoints.
 
 ## Ready submission copy
 
@@ -24,6 +24,7 @@ Last checked: October 7, 2026.
 | Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
+| Gumloop | [Sourced MCP and Task Runner guide](guides/gumloop.md); no native connection or template | Customer-owned OAuth connection and deliberate bounded validation; Task Runner also requires a completed saved-task run |
 | Apify hosted MCP connection | Initialization and tool discovery verified; connection guide and capped call example included | Client OAuth/UI setup and live actor execution remain unverified |
 | MCP directories | Not submitted | An owned, tested MCP server registration or supported connection listing |
 | Apify agentic discovery | Existing automatic discovery verified: 49 of 83 public listings matched the eligible filter on October 7 | [Guide](guides/agentic-discovery.md) and [snapshot](verification/agentic-discovery.json); payment, actor execution and commercial adoption unverified |
