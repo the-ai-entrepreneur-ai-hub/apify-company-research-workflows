@@ -1,6 +1,6 @@
 # Submission and verification status
 
-Gumloop setup documentation checked October 8, 2026. Other channel records retain their October 7 checkpoints.
+Gumloop and Windmill documentation checked October 8, 2026. Other channel records retain their October 7 checkpoints.
 
 ## Ready submission copy
 
@@ -25,6 +25,7 @@ Gumloop setup documentation checked October 8, 2026. Other channel records retai
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
 | Gumloop | [Sourced MCP and Task Runner guide](guides/gumloop.md); no native connection or template | Customer-owned OAuth connection and deliberate bounded validation; Task Runner also requires a completed saved-task run |
+| Windmill | [Python connector and guide](guides/windmill.md) prepared with thirteen local HTTP tests; not submitted to Hub | Authenticated workspace validation and native Hub submission/moderator review |
 | Apify hosted MCP connection | Initialization and tool discovery verified; connection guide and capped call example included | Client OAuth/UI setup and live actor execution remain unverified |
 | MCP directories | Not submitted | An owned, tested MCP server registration or supported connection listing |
 | Apify agentic discovery | Existing automatic discovery verified: 49 of 83 public listings matched the eligible filter on October 7 | [Guide](guides/agentic-discovery.md) and [snapshot](verification/agentic-discovery.json); payment, actor execution and commercial adoption unverified |
@@ -32,6 +33,7 @@ Gumloop setup documentation checked October 8, 2026. Other channel records retai
 ## Verification scope
 
 - Thirteen local workflow/collection/MCP contract tests cover synthetic fixtures, the documented actor shutdown reserve and credential-free MCP examples.
+- Thirteen additional Python HTTP tests exercise the Windmill script locally with synthetic credentials. Native Windmill execution, Hub placement and live actor resolution remain unverified.
 - Input/output field names were compared with the actor's local schema and existing dataset rows.
 - No new paid actor run was started.
 - Independent review identified and corrected an unavailable sandbox global; workflow tests do not inject that global.

@@ -14,6 +14,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 - [Clay setup guide](guides/clay.md)
 - [Make setup guide](guides/make.md)
 - [Gumloop agent and Task Runner setup guide](guides/gumloop.md) — documented connection paths; native execution remains unverified.
+- [Windmill Python script and setup guide](guides/windmill.md) — capped company research with local HTTP tests; native Hub submission pending.
 
 ## What the n8n workflow does
 
@@ -64,6 +65,7 @@ Run with Node.js 22 or newer:
 
 ```text
 npm test
+python -B -m unittest discover -s test -p test_windmill.py -v
 ```
 
 The workflow passed three CLI execution scenarios in n8n 2.42.4 using a local mock API and synthetic credentials: success, failed actor run and empty dataset. See the [engine report](verification/n8n-engine.json) and [verification scope](SUBMISSIONS.md). No paid actor execution was performed. Existing actor dataset fields were inspected read-only; current live resolution remains unverified. Clay and Make documents are setup guides, not exported native templates.

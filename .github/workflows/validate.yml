@@ -11,3 +11,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm test
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -B -m unittest discover -s test -p test_windmill.py -v
