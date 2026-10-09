@@ -14,7 +14,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 - [Clay setup guide](guides/clay.md)
 - [Make setup guide](guides/make.md)
 - [Gumloop agent and Task Runner setup guide](guides/gumloop.md) — documented connection paths; native execution remains unverified.
-- [Windmill Python script and setup guide](guides/windmill.md) — capped company research with local HTTP tests; native Hub submission pending.
+- [Windmill Python script and setup guide](guides/windmill.md) — capped company research with local HTTP tests; [native Hub submission](https://hub.windmill.dev/scripts/apify/22820/research-company-domains-with-apify-and-review-unresolved-matches-apify) saved October 9, with moderator approval unverified.
 
 ## What the n8n workflow does
 

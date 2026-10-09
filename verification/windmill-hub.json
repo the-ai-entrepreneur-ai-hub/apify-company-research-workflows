@@ -1,0 +1,22 @@
+{
+  "submittedAtUtc": "2026-10-09T10:27:00Z",
+  "submissionTimeSource": "Browser clock observed by the native UI helper",
+  "publicReadVerifiedAtUtc": "2026-10-09T10:29:22.390789+00:00",
+  "scriptId": 22820,
+  "url": "https://hub.windmill.dev/scripts/apify/22820/research-company-domains-with-apify-and-review-unresolved-matches-apify",
+  "method": "Normal Hub form submission followed by anonymous HTTP GET and comparison of decoded public source, summary and description",
+  "publicHttpStatus": 200,
+  "publicSourceMatchesReviewedPack": true,
+  "publicSummaryMatchesReviewedCopy": true,
+  "publicDescriptionMatchesReviewedCopy": true,
+  "sourceSha256NormalizedLf": "9b34ef0293e0877aa386afcce50664988f16d402f62d1422e9dc08c6f71e356f",
+  "approvedScript": null,
+  "approvedVersion": null,
+  "moderatorApprovalEstablished": false,
+  "integrationCatalogPlacementEstablished": false,
+  "nativeExecutionEstablished": false,
+  "liveActorOutputEstablished": false,
+  "paidAdoptionEstablished": false,
+  "actorRunsStartedForSubmission": 0,
+  "scriptRunsStartedForSubmission": 0
+}

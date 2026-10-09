@@ -45,6 +45,6 @@ python -B -m unittest discover -s test -p test_windmill.py -v
 
 These checks do not establish execution inside Windmill, a completed workspace connection or live actor resolution. No paid actor run was started for this publication.
 
-This script is published in the workflow pack. **It has not been submitted to or approved by Windmill Hub.** Windmill has an [Apify integration catalog](https://hub.windmill.dev/integrations/apify); [native Hub submission](https://www.windmill.dev/docs/misc/share_on_hub) requires authentication and moderator review. An authenticated Hub submission is the next placement step. Customer adoption and revenue remain unmeasured.
+This script was submitted to Windmill Hub on October 9, 2026: [Research company domains with Apify and review unresolved matches](https://hub.windmill.dev/scripts/apify/22820/research-company-domains-with-apify-and-review-unresolved-matches-apify). An anonymous HTTP read verified that its public source, summary and description match the reviewed pack. The page's approval fields are empty, so **moderator approval and placement in the [Apify integration catalog](https://hub.windmill.dev/integrations/apify) remain unverified**. See the [dated submission evidence](../verification/windmill-hub.json). Native execution, live actor resolution, customer adoption and revenue remain unmeasured. Follow [Windmill's Hub review process](https://www.windmill.dev/docs/misc/share_on_hub) before treating submission as approval.
 
 Maintained by the developer of the linked actor. This pack is not endorsed by Windmill.
