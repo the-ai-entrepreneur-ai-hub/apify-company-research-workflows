@@ -1,6 +1,6 @@
 # Submission and verification status
 
-Windmill native submission checked October 9, 2026. Gumloop documentation retains its October 8 checkpoint. Other channel records retain their October 7 checkpoints.
+n8n public listing checked October 10, 2026. Windmill retains its October 9 checkpoint. Gumloop retains its October 8 checkpoint. Other channel records retain their October 7 checkpoints.
 
 ## Ready submission copy
 
@@ -20,7 +20,7 @@ Windmill native submission checked October 9, 2026. Gumloop documentation retain
 |---|---|---|
 | Public GitHub workflow pack | Published; anonymous downloads verified | Measure adoption and maintain assets |
 | Apify public starter task | Published; visible in the actor's Tasks tab without login | Customers copy and evaluate it; adoption unmeasured |
-| n8n Creator Hub | Template 20634 submitted for human review on October 7; local-mock engine checks passed | Publisher review and public gallery acceptance |
+| n8n Creator Hub | [Template 20634](https://n8n.io/workflows/20634) approved October 9; public gallery listing verified October 10 | Measure adoption and paid use; native cloud execution remains unverified |
 | Postman Public API Network | Not published; signup browser reached a security verification page | Authenticated public workspace or Postman API key |
 | Clay | Guide prepared; no native table | Authenticated workspace, table validation, public template sharing |
 | Make | Guide prepared; no native scenario | Authenticated workspace, scenario validation and optional gallery approval |
@@ -51,9 +51,9 @@ The [public starter task](https://apify.com/george.the.developer/linkedin-compan
 
 Anonymous requests retrieved the workflow JSON, Postman collection and README and matched them against the local files. The initial [automated validation run](https://github.com/the-ai-entrepreneur-ai-hub/apify-company-research-workflows/actions/runs/37615595771) completed successfully.
 
-Creator registration initially displayed an email-verification instruction. A later authenticated login reached the dashboard and upload form, so that message did not block submission. Template `20634`, **Resolve company domains to LinkedIn company records with Apify**, was uploaded once for automatic review, finalized and submitted for human review at `2026-10-07T13:14:10.217Z`. The portal confirmed submission and stated a typical review time of 3-5 business days. Public gallery approval and publication remain pending. Executable nodes, connections and limits are unchanged from the CLI-verified workflow.
+Creator registration initially displayed an email-verification instruction. A later authenticated login reached the dashboard and upload form, so that message did not block submission. Template `20634` was uploaded once, finalized and submitted for human review at `2026-10-07T13:14:10.217Z`. The owner received n8n's approval notification on October 9. On October 10, a normal browser read confirmed the public listing, **Resolve company domains to LinkedIn company pages with Apify**, creator George Kioko and the **Use for free** button. No import or actor run was started. Executable nodes, connections and limits in this repository are unchanged from the CLI-verified workflow.
 
-Post-submission review found that the portal's finalized listing description was longer than the uploaded overview note. The repository's workflow and [description](guides/n8n-template.md) now include every finalized description section. The native submission still holds the earlier, shorter overview note: n8n rejected an edit with HTTP 400 because the template is under review. Apply the prepared note correction when the publisher permits edits; no duplicate submission was created. The change affects instructions and layout only. Full compliance with the description-in-sticky guideline remains pending for the native submission.
+At submission on October 7, the uploaded overview note was shorter than the finalized listing description. The repository's workflow and [description](guides/n8n-template.md) include every finalized description section. n8n rejected an edit with HTTP 400 while the template was under review. The published workflow's overview note has not been rechecked. Apply the prepared note correction when creator-portal edits are available; no duplicate submission was created. The prepared change affects instructions and layout only.
 
 ## Publishing routes
 

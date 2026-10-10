@@ -7,6 +7,7 @@ Uses [LinkedIn Company by Domain](https://apify.com/george.the.developer/linkedi
 ## Download
 
 - [Apify starter task](https://apify.com/george.the.developer/linkedin-company-by-domain/examples/company-domain-research-starter) — a public three-domain configuration; copy and edit it before running.
+- [Approved n8n gallery template](https://n8n.io/workflows/20634). Approval received October 9; public listing checked October 10, 2026.
 - [n8n workflow JSON](workflows/company-domain-research.n8n.json)
 - [Postman collection JSON](postman/company-domain-research.postman_collection.json)
 - [Remote MCP client setup](guides/mcp.md) with a capped actor-call example
@@ -77,4 +78,4 @@ The workflow passed three CLI execution scenarios in n8n 2.42.4 using a local mo
 - [Clay's Apify integration](https://www.clay.com/integrations/data-provider/apify)
 - [Apify and Make](https://apify.com/integrations/make)
 
-Maintained by George, the developer of the linked actor. This pack has not been endorsed by n8n, Clay, Make or Postman. Integration platform subscriptions and actor charges are separate.
+Maintained by George, the developer of the linked actor. n8n approved template 20634 on October 9, 2026. The Clay, Make and Postman guides are developer-authored. Integration platform subscriptions and actor charges are separate.
